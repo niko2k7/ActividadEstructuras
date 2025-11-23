@@ -9,37 +9,38 @@
 
 ## 📌 Descripción del Proyecto
 
-**UrgencyHeap** es una aplicación desarrollada en **Java + JavaFX** que permite gestionar pacientes en un servicio de urgencias utilizando una **cola de prioridad implementada con un MaxHeap**.
+**UrgencyHeap** es una aplicación simple ***********9++++++++++++++desarrollada en **Java + JavaFX** que permite gestionar pacientes en un servicio de urgencias utilizando una **cola de prioridad implementada con un MaxHeap**.
 
 Cada paciente es registrado con su nombre, edad y síntomas.  
-El sistema calcula una **prioridad automática** basada en los síntomas seleccionados y organiza la atención de forma óptima.
+El sistema calcula una **prioridad** basada en los síntomas seleccionados y organiza la atención de forma óptima.
 
 ---
 
 ## 🗂️ Estructura del Proyecto
+```text
 C:.
-│ .gitignore
-│ pom.xml
-│ README.md
+│   .gitignore
+│   pom.xml
+│   README.md
 │
 ├───src
-│ ├───main
-│ │ ├───java
-│ │ │ ├───Controllers
-│ │ │ │ UrgenciaController.java
-│ │ │ │
-│ │ │ ├───Main
-│ │ │ │ App.java
-│ │ │ │
-│ │ │ └───Models
-│ │ │ MaxHeap.java
-│ │ │ Nodo.java
-│ │ │ Paciente.java
-│ │ │
-│ │ └───resources
-│ │ estilos.css
-│ │ urgencias.fxml
-
+│   ├───main
+│   │   ├───java
+│   │   │   ├───Controllers
+│   │   │   │       UrgenciaController.java
+│   │   │   │
+│   │   │   ├───Main
+│   │   │   │       App.java
+│   │   │   │
+│   │   │   └───Models
+│   │   │           MaxHeap.java
+│   │   │           Nodo.java
+│   │   │           Paciente.java
+│   │   │
+│   │   └───resources
+│   │           estilos.css
+│   │           urgencias.fxml
+```
 
 ---
 
@@ -52,8 +53,10 @@ https://www.oracle.com/co/java/technologies/downloads/#jdk24-windows
 
 1. Abrir **CMD**
 2. Ejecutar:
+```text
 java --version
 javac --version
+```
 3. Ambas deben mostrar la versión correcta del JDK.
 
 ---
@@ -68,15 +71,21 @@ Seleccionar **binary zip archive**.
 ### Instalación
 
 1. Crear esta ruta si no existe:
+```text
 C:\Program Files\Apache\Maven
+```
 2. Descomprimir el zip aquí:
+```text
 C:\Program Files\Apache\Maven\apache-maven-3.9.11
+```
 3. Abrir:
 **WIN + S → “Editar las variables de entorno del sistema”**
 4. Clic en **Variables de entorno**
 5. Editar **Path**
 6. Agregar:
-C:\Program Files\Apache\Maven\apache-maven-3.9.10\bin
+```text
+C:\Program Files\Apache\Maven\apache-maven-3.9.11\bin
+```
 7. Aceptar todo
 8. En CMD:
 
@@ -90,7 +99,6 @@ Instalar estas extensiones:
 - **Java Extension Pack**
 - **JavaFX Support**
 - **Java**
-- (Opcional) GitHub Copilot
 
 ---
 
@@ -100,9 +108,13 @@ Instalar estas extensiones:
 2. Verificar que existe el archivo `pom.xml`  
 3. Abrir terminal (`Ctrl + Ñ`)  
 4. Compilar:
+```text
 mvn clean compile
+```
 5. Ejecutar:
+```text
 mvn clean javafx:run
+```
 
 ---
 
