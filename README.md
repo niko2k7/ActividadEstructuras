@@ -9,7 +9,7 @@
 
 ## 📌 Descripción del Proyecto
 
-**UrgencyHeap** es una aplicación simple ***********9++++++++++++++desarrollada en **Java + JavaFX** que permite gestionar pacientes en un servicio de urgencias utilizando una **cola de prioridad implementada con un MaxHeap**.
+**UrgencyHeap** es una aplicación simple desarrollada en **Java + JavaFX** que permite gestionar pacientes en un servicio de urgencias utilizando una **cola de prioridad implementada con un MaxHeap**.
 
 Cada paciente es registrado con su nombre, edad y síntomas.  
 El sistema calcula una **prioridad** basada en los síntomas seleccionados y organiza la atención de forma óptima.
