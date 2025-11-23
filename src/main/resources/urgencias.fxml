@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UrgenciaController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="600.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de urgencias" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="575.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="300.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar paciente">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+                        <TextField fx:id="txtNombre" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Edad" />
+                        <TextField fx:id="txtEdad" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Síntomas" />
+                        <CheckBox fx:id="chkDificultadRespiratoria" mnemonicParsing="false" text="Dificultad respiratoria (5)" />
+                        <CheckBox fx:id="chkHemorragia" mnemonicParsing="false" text="Hemorragia (5)" />
+                        <CheckBox fx:id="chkPerdidaConsciencia" mnemonicParsing="false" text="Pérdida consciencia o golpe cabeza (5)" />
+                        <CheckBox fx:id="chkQuemaduras" mnemonicParsing="false" text="Quemaduras graves (4)" />
+                        <CheckBox fx:id="chkFiebreAlta" mnemonicParsing="false" text="Fiebre alta +40° (3)" />
+                        <CheckBox fx:id="chkDolorAbdominal" mnemonicParsing="false" text="Dolor abdominal (3)" />
+                        <CheckBox fx:id="chkVomitos" mnemonicParsing="false" text="Vómitos y deshitradación (2)" />
+                        <CheckBox fx:id="chkTraumatismoLeve" alignment="CENTER" mnemonicParsing="false" text="Traumatismo leve (golpe, esguince) (1)" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#registrarPaciente" text="Registrar" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="45.0" prefWidth="290.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Próximo paciente a atender" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <Button mnemonicParsing="false" onAction="#consultarSiguiente" text="Consultar siguiente" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="45.0" prefWidth="100.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Atender paciente con mayor priodidad" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                        <Button mnemonicParsing="false" onAction="#atenderPaciente" text="Atender" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="500.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="495.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Listado de pacientes">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tablaPacientes" prefHeight="237.0" prefWidth="495.0">
+                    <columns>
+                      <TableColumn fx:id="colNombre" prefWidth="260.0" text="Nombre" />
+                      <TableColumn fx:id="colEdad" prefWidth="80.79998779296875" text="Edad" />
+                        <TableColumn fx:id="colPrioridad" prefWidth="160.0" text="Prioridad" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="495.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Historial">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="txtSalida" prefHeight="157.0" prefWidth="495.0" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
